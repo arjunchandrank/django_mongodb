@@ -12,13 +12,13 @@ ENV PYTHONUNBUFFERED 1
 COPY ./requirements.txt /app/requirements.txt
 RUN pip3 install -r /app/requirements.txt
 
-COPY *.env.local /app/
+COPY . /app/
 
 # copy entrypoint.sh
 # COPY ./entrypoint.local.sh .
-# RUN sed -i 's/\r$//g' /app/entrypoint.local.sh
+RUN sed -i 's/\r$//g' /app/entrypoint.sh
 
-# RUN chmod +x /app/entrypoint.local.sh
+RUN chmod +x /app/entrypoint.sh
 
 EXPOSE 8000
 
