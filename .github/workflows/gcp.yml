@@ -10,11 +10,12 @@ jobs:
       IMAGE_NAME: django_mongodb_image
       PROJECT_ID: civil-accord-396006
     steps:
-    - name: Checkout
+    # - name: Checkout
     - uses: actions/checkout@v2
 
     - name: Authenticate gcloud
       uses: google-github-actions/setup-gcloud@main
+      
     - id: 'auth'
       name: Authenticate to Google Cloud
       uses: google-github-actions/auth@v0
