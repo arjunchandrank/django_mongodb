@@ -10,11 +10,11 @@ services:
       context: ./
       dockerfile: ./docker/local.Dockerfile
     env_file: .env.local
-    command: bash -c  "python3 manage.py runserver 0.0.0.0:8000"
+    command: bash -c  "python3 manage.py runserver 0.0.0.0:8080"
     # command: bash -c "gunicorn --bind 0.0.0.0:8000 docker_django.wsgi:application"
     # command: bash -c "django-admin startproject django_azure"
     ports:
-      - "8001:8000"
+      - "8080:8080"
     volumes:
       - ./:/app
     # depends_on:
